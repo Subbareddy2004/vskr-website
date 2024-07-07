@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -111,26 +113,37 @@ nav ul li a:hover {
     transform: translateY(-5px);
 }
 
+/* ... (previous CSS remains the same) ... */
+
 #contact {
     background-color: #4a148c;
     color: #fff;
+    padding: 60px 0;
 }
 
 .contact-info {
     margin-top: 30px;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-info p {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .contact-info strong {
     font-weight: bold;
     margin-right: 10px;
     color: #ff80ab;
+    min-width: 100px;
+    display: inline-block;
 }
 
 .contact-info a {
@@ -147,8 +160,11 @@ nav ul li a:hover {
     margin-top: 40px;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .location h3 {
@@ -170,6 +186,8 @@ iframe {
     border: none;
     border-radius: 10px;
 }
+
+/* ... (rest of the CSS remains the same) ... */
 
 footer {
     background-color: #4a148c;
@@ -196,5 +214,40 @@ footer p {
     }
     .btn {
         padding: 10px 20px;
+    }
+}
+
+#gallery {
+    background-color: #f3e5f5;
+    padding: 60px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 40px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .photo-grid img {
+        height: 200px;
     }
 }
